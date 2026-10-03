@@ -43,9 +43,10 @@ QM640_data_analytics_capstone/
 ├── notebooks/
 │   └── 01_data_preparation.ipynb       # load, validate, collapse, derive, profile
 ├── src/
-│   └── sample_size.py                  # minimum sample size per RQ (synopsis Table 2)
+│   └── sample_size.py                  # minimum sample size per RQ (synopsis Tables 3–4)
 └── docs/
-    └── QM640_Synopsis_Balakrishnan_Draft.docx
+    ├── QM640_Synopsis_Balakrishnan_Draft.docx
+    └── QM640_Synopsis_Balakrishnan_Draft.pdf
 ```
 
 Notebooks for RQ1–RQ4 will be added after the synopsis is approved.
@@ -55,7 +56,7 @@ Notebooks for RQ1–RQ4 will be added after the synopsis is approved.
 | RQ | Method | Minimum N |
 |---|---|---|
 | RQ1 | One-way ANOVA, f = 0.10, k = 4, adjusted for Kruskal–Wallis (ARE 0.864) | 1,268 |
-| RQ2 | χ² test of independence, w = 0.10, df = 1 | 785 |
+| RQ2 | χ² test of independence, w = 0.10, df = 1, adjusted for covariates (÷ (1 − R²), R² = 0.047) | 824 |
 | RQ3 | Two-sample t, d = 0.20, allocation 1:6 (observed 1:5.8), ARE 0.864 | 1,864 |
 | RQ4 | AUC precision (Hanley & McNeil, 1982), AUC 0.75, e = 0.03, p = 0.366, 30% hold-out | 3,970 |
 

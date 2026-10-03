@@ -36,8 +36,8 @@ def auc_test_n(auc, e, prev):                 # RQ4 (Hanley & McNeil, 1982)
         n += 1
 
 rq1 = int(np.ceil(anova_n(0.10, 4) / ARE))    # 1095 / 0.864 -> 1268
-rq2 = chi2_n(0.10, 1)                         # 785
-rq3 = int(np.ceil(ttest_n(0.20, 6) / ARE))    # observed 1:5.8 -> 1:6; 1610 / 0.864 -> 1864
+rq2 = int(np.ceil(chi2_n(0.10, 1) / (1 - 0.047)))  # 785 / 0.953 -> 824
+rq3 = int(np.ceil(ttest_n(0.20, 6) / ARE))    # 1:6 allocation; 1610 / 0.864 -> 1864
 test = auc_test_n(0.75, 0.03, 9115 / 24918)   # observed prevalence 0.366; 1191
 rq4 = int(np.ceil(test / 0.30))               # 3970
 print(rq1, rq2, rq3, test, rq4, "final N =", max(rq1, rq2, rq3, rq4))
