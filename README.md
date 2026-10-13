@@ -47,8 +47,8 @@ QM640_data_analytics_capstone/
 ├── src/
 │   └── sample_size.py                  # minimum sample size per RQ (synopsis Tables 3–4)
 └── docs/
-    ├── QM640_Synopsis_Balakrishnan_Draft.docx
-    └── QM640_Synopsis_Balakrishnan_Draft.pdf
+    ├── QM640_Synopsis_Balakrishnan_Final.docx
+    └── QM640_Synopsis_Balakrishnan_Final.pdf
 ```
 
 Notebooks for RQ1–RQ4 will be added after the synopsis is approved.
