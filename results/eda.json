@@ -1,0 +1,449 @@
+{
+ "events": 141712,
+ "columns": 36,
+ "exact_duplicate_rows": 0,
+ "duplicate_number_modcount": 5,
+ "state_minus100_rows": 5,
+ "event_missing_pct": {
+  "caused_by": 100.0,
+  "vendor": 99.8,
+  "cmdb_ci": 99.7,
+  "rfc": 99.3,
+  "problem_id": 98.4,
+  "sys_created_by": 37.5,
+  "sys_created_at": 37.5,
+  "u_symptom": 23.3,
+  "assigned_to": 19.4,
+  "assignment_group": 10.0,
+  "opened_by": 3.4,
+  "resolved_at": 2.2,
+  "closed_code": 0.5,
+  "resolved_by": 0.2,
+  "subcategory": 0.1,
+  "location": 0.1,
+  "category": 0.1
+ },
+ "incidents": 24918,
+ "duplicate_incidents": 0,
+ "incident_missing_pct": {
+  "category": 0.03,
+  "subcategory": 0.03,
+  "resolved_at": 6.24,
+  "log_category": 0.16,
+  "log_subcategory": 0.28,
+  "log_u_symptom": 23.02,
+  "log_location": 0.21,
+  "log_assignment_group": 3.64,
+  "log_caller_id": 0.01,
+  "log_cmdb_ci": 99.8
+ },
+ "numeric_summary": [
+  {
+   "index": "reassignment_count",
+   "count": 24918.0,
+   "mean": 0.94,
+   "std": 1.57,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.0,
+   "75%": 1.0,
+   "95%": 4.0,
+   "99%": 7.0,
+   "max": 27.0,
+   "iqr_upper_fence": 2.5,
+   "n_above_fence": 2848
+  },
+  {
+   "index": "reopen_count",
+   "count": 24918.0,
+   "mean": 0.01,
+   "std": 0.15,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.0,
+   "75%": 0.0,
+   "95%": 0.0,
+   "99%": 1.0,
+   "max": 8.0,
+   "iqr_upper_fence": 0.0,
+   "n_above_fence": 275
+  },
+  {
+   "index": "sys_mod_count",
+   "count": 24918.0,
+   "mean": 6.68,
+   "std": 8.55,
+   "min": 1.0,
+   "25%": 2.0,
+   "50%": 4.0,
+   "75%": 8.0,
+   "95%": 19.0,
+   "99%": 46.0,
+   "max": 129.0,
+   "iqr_upper_fence": 17.0,
+   "n_above_fence": 1470
+  },
+  {
+   "index": "resolution_hours",
+   "count": 23362.0,
+   "mean": 178.17,
+   "std": 532.79,
+   "min": 0.0,
+   "25%": 0.42,
+   "50%": 22.1,
+   "75%": 148.48,
+   "95%": 710.52,
+   "99%": 2843.4,
+   "max": 8070.17,
+   "iqr_upper_fence": 370.57,
+   "n_above_fence": 2383
+  }
+ ],
+ "resolution_missing": 1556,
+ "resolution_nonpositive": 39,
+ "resolution_over_1000h": 812,
+ "opened_range": [
+  "2016-02-29 01:16:00",
+  "2017-02-16 14:17:00"
+ ],
+ "breaches": 9115,
+ "breach_rate": 0.3658,
+ "priority_profile": [
+  {
+   "priority": "1 - Critical",
+   "size": 270,
+   "sum": 265,
+   "mean": 0.9814814814814815
+  },
+  {
+   "priority": "2 - High",
+   "size": 408,
+   "sum": 406,
+   "mean": 0.9950980392156863
+  },
+  {
+   "priority": "3 - Moderate",
+   "size": 23466,
+   "sum": 8321,
+   "mean": 0.35459814199267026
+  },
+  {
+   "priority": "4 - Low",
+   "size": 774,
+   "sum": 123,
+   "mean": 0.15891472868217055
+  }
+ ],
+ "reassign_profile": [
+  {
+   "reassign_grp": "0",
+   "size": 13549,
+   "sum": 2928,
+   "mean": 0.21610450955790095
+  },
+  {
+   "reassign_grp": "1",
+   "size": 6238,
+   "sum": 2678,
+   "mean": 0.4293042641872395
+  },
+  {
+   "reassign_grp": "2",
+   "size": 2283,
+   "sum": 1373,
+   "mean": 0.601401664476566
+  },
+  {
+   "reassign_grp": "3",
+   "size": 1234,
+   "sum": 828,
+   "mean": 0.6709886547811994
+  },
+  {
+   "reassign_grp": "4+",
+   "size": 1614,
+   "sum": 1308,
+   "mean": 0.8104089219330854
+  }
+ ],
+ "knowledge_by_priority": [
+  {
+   "priority": "1 - Critical",
+   "knowledge": false,
+   "size": 237,
+   "mean": 0.9831223628691983
+  },
+  {
+   "priority": "1 - Critical",
+   "knowledge": true,
+   "size": 33,
+   "mean": 0.9696969696969697
+  },
+  {
+   "priority": "2 - High",
+   "knowledge": false,
+   "size": 329,
+   "mean": 0.993920972644377
+  },
+  {
+   "priority": "2 - High",
+   "knowledge": true,
+   "size": 79,
+   "mean": 1.0
+  },
+  {
+   "priority": "3 - Moderate",
+   "knowledge": false,
+   "size": 20261,
+   "mean": 0.29238438379152065
+  },
+  {
+   "priority": "3 - Moderate",
+   "knowledge": true,
+   "size": 3205,
+   "mean": 0.7478939157566302
+  },
+  {
+   "priority": "4 - Low",
+   "knowledge": false,
+   "size": 540,
+   "mean": 0.05555555555555555
+  },
+  {
+   "priority": "4 - Low",
+   "knowledge": true,
+   "size": 234,
+   "mean": 0.3974358974358974
+  }
+ ],
+ "temporal_cut": "2016-05-02 11:30:00",
+ "weekly": {
+  "2016-03-07": [
+   2258,
+   0.683,
+   0.965
+  ],
+  "2016-03-14": [
+   1925,
+   0.961,
+   0.558
+  ],
+  "2016-03-21": [
+   1954,
+   0.516,
+   0.003
+  ],
+  "2016-03-28": [
+   1745,
+   0.375,
+   0.005
+  ],
+  "2016-04-04": [
+   2133,
+   0.261,
+   0.008
+  ],
+  "2016-04-11": [
+   1935,
+   0.244,
+   0.007
+  ],
+  "2016-04-18": [
+   2036,
+   0.227,
+   0.007
+  ],
+  "2016-04-25": [
+   1422,
+   0.297,
+   0.002
+  ],
+  "2016-05-02": [
+   2079,
+   0.182,
+   0.005
+  ],
+  "2016-05-09": [
+   1931,
+   0.238,
+   0.004
+  ],
+  "2016-05-16": [
+   1790,
+   0.225,
+   0.001
+  ],
+  "2016-05-23": [
+   1766,
+   0.214,
+   0.006
+  ],
+  "2016-05-30": [
+   1163,
+   0.25,
+   0.001
+  ],
+  "2016-06-06": [
+   301,
+   0.226,
+   0.0
+  ]
+ },
+ "resolution_median_by_outcome": {
+  "0": 1.1,
+  "1": 201.7
+ },
+ "hour_profile": {
+  "0": [
+   269,
+   0.275
+  ],
+  "1": [
+   222,
+   0.302
+  ],
+  "2": [
+   149,
+   0.215
+  ],
+  "3": [
+   123,
+   0.374
+  ],
+  "4": [
+   128,
+   0.273
+  ],
+  "5": [
+   132,
+   0.318
+  ],
+  "6": [
+   320,
+   0.237
+  ],
+  "7": [
+   573,
+   0.307
+  ],
+  "8": [
+   2547,
+   0.306
+  ],
+  "9": [
+   3014,
+   0.339
+  ],
+  "10": [
+   2893,
+   0.383
+  ],
+  "11": [
+   2469,
+   0.394
+  ],
+  "12": [
+   1342,
+   0.364
+  ],
+  "13": [
+   1645,
+   0.408
+  ],
+  "14": [
+   2255,
+   0.438
+  ],
+  "15": [
+   2131,
+   0.408
+  ],
+  "16": [
+   1867,
+   0.395
+  ],
+  "17": [
+   1075,
+   0.412
+  ],
+  "18": [
+   466,
+   0.335
+  ],
+  "19": [
+   296,
+   0.304
+  ],
+  "20": [
+   226,
+   0.336
+  ],
+  "21": [
+   359,
+   0.164
+  ],
+  "22": [
+   245,
+   0.233
+  ],
+  "23": [
+   172,
+   0.297
+  ]
+ },
+ "weekend_profile": {
+  "weekday": [
+   23716,
+   0.372
+  ],
+  "weekend": [
+   1202,
+   0.242
+  ]
+ },
+ "n_categories": 52,
+ "top10_category_share": 0.759,
+ "categories_lt30": 22,
+ "top_categories": [
+  {
+   "category": "Category 42",
+   "size": 3558,
+   "mean": 0.19364811691961775
+  },
+  {
+   "category": "Category 26",
+   "size": 3338,
+   "mean": 0.304673457159976
+  },
+  {
+   "category": "Category 53",
+   "size": 2678,
+   "mean": 0.37677371172516805
+  },
+  {
+   "category": "Category 46",
+   "size": 2432,
+   "mean": 0.515625
+  },
+  {
+   "category": "Category 32",
+   "size": 1522,
+   "mean": 0.24770039421813403
+  },
+  {
+   "category": "Category 9",
+   "size": 1155,
+   "mean": 0.4077922077922078
+  },
+  {
+   "category": "Category 37",
+   "size": 1144,
+   "mean": 0.33653846153846156
+  },
+  {
+   "category": "Category 23",
+   "size": 1063,
+   "mean": 0.47507055503292567
+  }
+ ]
+}

@@ -38,20 +38,31 @@ QM640_data_analytics_capstone/
 ├── README.md
 ├── requirements.txt
 ├── data/
-│   ├── raw/
-│   │   └── incident_event_log.csv      # UCI source file, unchanged
-│   └── processed/
-│       └── incidents.csv               # one row per incident (created by notebook 01)
+│   ├── raw/incident_event_log.csv          # UCI source file, unchanged
+│   └── processed/incidents.csv             # one row per incident (notebook 01)
 ├── notebooks/
-│   └── 01_data_preparation.ipynb       # load, validate, collapse, derive, profile
+│   ├── 01_data_preparation.ipynb           # load, validate, collapse, derive
+│   ├── 02_cleaning_and_eda.ipynb           # cleaning log, EDA figures
+│   ├── 03_rq1_rq3_hypothesis_tests.ipynb   # chi-square, logistic regression, Mantel-Haenszel
+│   └── 04_rq4_prediction_models.ipynb      # baseline, LR, RF, XGBoost, DeLong test
 ├── src/
-│   └── sample_size.py                  # minimum sample size per RQ (synopsis Tables 3–4)
+│   ├── sample_size.py                      # minimum sample size per RQ
+│   └── plot_style.py                       # shared chart style
+├── figures/                                # report figures (PNG)
+├── results/                                # numeric outputs (JSON) used in the reports
 └── docs/
-    ├── QM640_Synopsis_Balakrishnan_Final.docx
-    └── QM640_Synopsis_Balakrishnan_Final.pdf
+    ├── QM640_Synopsis_Balakrishnan_Final.docx / .pdf
+    └── QM640_Interim_Report_Balakrishnan_Draft.docx / .pdf
 ```
 
-Notebooks for RQ1–RQ4 will be added after the synopsis is approved.
+## Preliminary results (interim report)
+
+| RQ | Result | Decision |
+|---|---|---|
+| RQ1 | χ²(3) = 1,293.1, p < .001, Cramér's V = 0.228 | Reject H0 |
+| RQ2 | Adjusted OR = 1.95 per reassignment (95% CI 1.90–2.00) | Reject H0 |
+| RQ3 | Raw OR = 6.24; reverses to 0.61 after controlling for opening week (March 2016 structural break) | Reject H0; direction tentative |
+| RQ4 | Random forest AUC 0.785 vs priority-only baseline 0.552 (DeLong p < .001) | Reject H0 |
 
 ## Sample size (α = 0.05, power = 0.80)
 
@@ -64,10 +75,19 @@ Notebooks for RQ1–RQ4 will be added after the synopsis is approved.
 
 Final minimum N = 3,970; available N = 24,918 (6.3×). Run `python src/sample_size.py` to reproduce.
 
+## Reproducibility note
+
+Results in `results/` and in the reports were produced with Python 3.11 and the exact library versions pinned in `requirements.txt`, with random seed 42. Notebooks 02 and 03 gave identical results in a Google Colab run with different library versions. In notebook 04, XGBoost can vary by about ±0.015 test AUC across library versions, because two tree depths (5 and 7) score almost the same in cross-validation and a version change can tip the choice; for example, a Google Colab run selected depth 5 and gave a test AUC of 0.751 rather than 0.738. All other models vary by 0.001 AUC or less, and no conclusion changes.
+
+To run in Google Colab, open a notebook from this repository; its first code cell clones the repository and moves into `notebooks/`.
+
 ## How to run
 
 ```bash
 pip install -r requirements.txt
 cd notebooks
-jupyter notebook 01_data_preparation.ipynb
+jupyter nbconvert --to notebook --execute --inplace 01_data_preparation.ipynb 02_cleaning_and_eda.ipynb \
+    03_rq1_rq3_hypothesis_tests.ipynb 04_rq4_prediction_models.ipynb
 ```
+
+Run the notebooks in order. Notebook 04 takes about 8 minutes on a laptop (grid search with 5-fold CV). Random seed = 42.
