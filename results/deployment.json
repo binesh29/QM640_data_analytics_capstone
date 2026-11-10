@@ -1,0 +1,100 @@
+{
+ "model_card": {
+  "model_version": "rf-v1.0",
+  "trained_at": "2026-11-10T05:12:34+00:00",
+  "algorithm": "RandomForestClassifier (400 trees) + Platt recalibration",
+  "hyperparameters": {
+   "max_features": "sqrt",
+   "min_samples_leaf": 2
+  },
+  "fit_window": [
+   "2016-02-29 01:16:00",
+   "2016-04-18 11:05:00"
+  ],
+  "n_fit": 13953,
+  "calibration_window": [
+   "2016-04-18 11:05:00",
+   "2016-05-02 11:26:00"
+  ],
+  "n_calibration": 3489,
+  "thresholds_raw": {
+   "high": 0.5789918425482411,
+   "medium": 0.4646891627136427
+  },
+  "features": [
+   "log_priority",
+   "log_impact",
+   "log_urgency",
+   "log_category",
+   "log_subcategory",
+   "log_u_symptom",
+   "log_contact_type",
+   "log_location",
+   "log_assignment_group",
+   "log_notify",
+   "dow",
+   "caller_freq",
+   "hour_sin",
+   "hour_cos",
+   "weekend",
+   "log_u_priority_confirmation",
+   "cmdb_ci_missing"
+  ],
+  "input_fields": [
+   "log_priority",
+   "log_impact",
+   "log_urgency",
+   "log_category",
+   "log_subcategory",
+   "log_u_symptom",
+   "log_contact_type",
+   "log_location",
+   "log_assignment_group",
+   "log_notify",
+   "log_caller_id",
+   "log_cmdb_ci",
+   "log_u_priority_confirmation",
+   "opened_at"
+  ],
+  "holdout": {
+   "n": 7476,
+   "auc": 0.776,
+   "mean_probability": 0.247,
+   "observed_rate": 0.233,
+   "share_high": 0.222,
+   "breach_rate_by_band": {
+    "High": 0.504,
+    "Low": 0.102,
+    "Medium": 0.297
+   }
+  }
+ },
+ "score_bands_may2016": [
+  {
+   "risk_band": "High",
+   "incidents": 1548,
+   "mean_probability": 0.534,
+   "observed_breach_rate": 0.5
+  },
+  {
+   "risk_band": "Medium",
+   "incidents": 1568,
+   "mean_probability": 0.294,
+   "observed_breach_rate": 0.302
+  },
+  {
+   "risk_band": "Low",
+   "incidents": 4312,
+   "mean_probability": 0.114,
+   "observed_breach_rate": 0.099
+  }
+ ],
+ "use_case": {
+  "day": "2016-05-03",
+  "tickets": 353,
+  "high": 70,
+  "breaches": 76,
+  "breaches_in_high": 41,
+  "expected_breaches": 83.6
+ }
+}

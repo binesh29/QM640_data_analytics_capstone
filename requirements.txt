@@ -8,3 +8,9 @@ scikit-learn==1.8.0
 xgboost==3.2.0
 matplotlib==3.10.9
 jupyter
+# deployment prototype (notebook 06, app/)
+joblib
+fastapi
+uvicorn
+httpx
+streamlit
