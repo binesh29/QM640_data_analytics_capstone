@@ -89,7 +89,7 @@ Final minimum N = 3,970; available N = 24,918 (6.3×). Run `python src/sample_si
 
 ## Reproducibility note
 
-Results in `results/` and in the reports were produced with Python 3.11 and the exact library versions pinned in `requirements.txt`, with random seed 42. Notebooks 02 and 03 gave identical results in a Google Colab run with different library versions. In notebook 04, XGBoost can vary by about ±0.015 test AUC across library versions, because two tree depths (5 and 7) score almost the same in cross-validation and a version change can tip the choice; for example, a Google Colab run selected depth 5 and gave a test AUC of 0.751 rather than 0.738. All other models vary by 0.001 AUC or less, and no conclusion changes.
+Results in `results/` and in the reports were produced with Python 3.11 and the exact library versions pinned in `requirements.txt`, with random seed 42. Notebooks 02 and 03 gave identical results in a Google Colab run with different library versions. In notebook 04, XGBoost can vary by about ±0.015 test AUC across library versions, because two tree depths (5 and 7) score almost the same in cross-validation and a version change can tip the choice; for example, a Google Colab run selected depth 5 and gave a test AUC of 0.751 rather than 0.738. All other models vary by 0.001 AUC or less, and no conclusion changes. Notebooks 05 and 06 in Google Colab gave the same RQ2/RQ3 results; test AUC differed by at most 0.006 (random forest 0.784 vs 0.785, XGBoost 0.744 vs 0.738, deployed model 0.777 vs 0.776).
 
 To run in Google Colab, open a notebook from this repository; its first code cell clones the repository and moves into `notebooks/`.
 
